@@ -32,6 +32,8 @@ ball.shape('circle')
 ball.color('white')
 ball.penup()
 ball.goto(0, 0)
+ball.x_speed = 0.02
+ball.y_speed = 0.02
 
 # function to move left paddle up
 def left_paddle_up():
@@ -68,3 +70,28 @@ window.onkeypress(right_paddle_down, 'Down')
 # main game loop
 while True:
     window.update()
+
+    ## move the ball
+    ball.setx(ball.xcor() + ball.x_speed)
+    ball.sety(ball.ycor() + ball.y_speed)
+
+    ## border checking
+    ### top border bounce
+    if ball.ycor() > 290:
+        ball.sety(290)
+        ball.y_speed *= -1
+
+    ### bottom border bounce
+    if ball.ycor() < -280:
+        ball.sety(-280)
+        ball.y_speed *= -1
+
+    ### right border reaction
+    if ball.xcor() > 390:
+        ball.goto(0, 0)
+        ball.x_speed *= -1
+
+    ### left border reaction
+    if ball.xcor() < -390:
+        ball.goto(0, 0)
+        ball.x_speed *= -1
