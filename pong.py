@@ -65,25 +65,29 @@ pen.goto(0, 150)
 # function to move left paddle up
 def left_paddle_up():
     y = left_paddle.ycor()
-    y += 20
+    if y < 250:
+        y += 20
     left_paddle.sety(y)
 
 # function to move left paddle down
 def left_paddle_down():
     y = left_paddle.ycor()
-    y -= 20
+    if y > -240:
+        y -= 20
     left_paddle.sety(y)
 
 # function to move right paddle up
 def right_paddle_up():
     y = right_paddle.ycor()
-    y += 20
+    if y < 250:
+        y += 20
     right_paddle.sety(y)
 
 # function to move right paddle down
 def right_paddle_down():
     y = right_paddle.ycor()
-    y -= 20
+    if y > -240:
+        y -= 20
     right_paddle.sety(y)
 
 # function to write score
