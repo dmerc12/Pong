@@ -86,12 +86,23 @@ while True:
         ball.sety(-280)
         ball.y_speed *= -1
 
-    ### right border reaction
+    ### right border catch
     if ball.xcor() > 390:
         ball.goto(0, 0)
         ball.x_speed *= -1
 
-    ### left border reaction
+    ### left border catch
     if ball.xcor() < -390:
         ball.goto(0, 0)
+        ball.x_speed *= -1
+
+    ## paddle and ball collisions
+    ### left paddle collision
+    if (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < left_paddle.ycor() + 40 and ball.ycor() > left_paddle.ycor() - 40):
+        ball.setx(-340)
+        ball.x_speed *= -1
+
+    ### right paddle collision
+    if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < right_paddle.ycor() + 40 and ball.ycor() > right_paddle.ycor() - 40):
+        ball.setx(340)
         ball.x_speed *= -1
