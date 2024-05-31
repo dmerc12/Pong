@@ -2,20 +2,16 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
-
 | Version | Supported          |
 | ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| v1.0.0  | :white_check_mark: |
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+If you discover a security vulnerability, please report it by creating a new issue in the GitHub repository. We take security vulnerabilities seriously and will do our best to address them promptly.
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+When reporting a vulnerability, please provide detailed information about the issue and any steps to reproduce it. We appreciate your responsible disclosure.
+
+Once a vulnerability report is received, we will acknowledge it and work towards providing a fix. We will keep you updated on the progress and inform you when the vulnerability is fixed.
+
+Thank you for helping to keep our project secure!
