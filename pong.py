@@ -1,5 +1,9 @@
 import turtle
 
+# initialize score
+player1_score = 0
+player2_score = 0
+
 # window
 window = turtle.Screen()
 window.title('PONG')
@@ -34,6 +38,15 @@ ball.penup()
 ball.goto(0, 0)
 ball.x_speed = 0.02
 ball.y_speed = 0.02
+
+# pen
+pen = turtle.Turtle()
+pen.speed(0)
+pen.color('white')
+pen.penup()
+pen.hideturtle()
+pen.goto(0, 260)
+pen.write(f'Player 1: {player1_score}  Player 2: {player2_score}', align='center', font=('Courier', 24, 'normal'))
 
 # function to move left paddle up
 def left_paddle_up():
@@ -90,11 +103,17 @@ while True:
     if ball.xcor() > 390:
         ball.goto(0, 0)
         ball.x_speed *= -1
+        player1_score += 1
+        pen.clear()
+        pen.write(f'Player 1: {player1_score}  Player 2: {player2_score}', align='center', font=('Courier', 24, 'normal'))
 
     ### left border catch
     if ball.xcor() < -390:
         ball.goto(0, 0)
         ball.x_speed *= -1
+        player2_score += 1
+        pen.clear()
+        pen.write(f'Player 1: {player1_score}  Player 2: {player2_score}', align='center', font=('Courier', 24, 'normal'))
 
     ## paddle and ball collisions
     ### left paddle collision
